@@ -1,0 +1,61 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+  background: var(--mat-sys-surface);
+
+  .brand {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: var(--mat-sys-on-surface);
+    text-decoration: none;
+  }
+
+  nav a {
+    font-size: 14px;
+    color: var(--mat-sys-on-surface-variant);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+
+    &:hover {
+      background: var(--mat-sys-surface-variant);
+      color: var(--mat-sys-on-surface);
+    }
+
+    &.active {
+      color: var(--mat-sys-on-surface);
+      font-weight: 500;
+    }
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      color: var(--mat-sys-on-surface);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s;
+
+      &:hover {
+        background: var(--mat-sys-surface-variant);
+      }
+    }
+  }
+}

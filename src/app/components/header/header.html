@@ -1,0 +1,16 @@
+<header>
+  <a class="brand" routerLink="/">Wint</a>
+
+  <nav>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Catálogo de Produtos
+    </a>
+  </nav>
+
+  <div>
+    <app-theme-toggle />
+    <button [matBadge]="3" matBadgeColor="warn">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </div>
+</header>
