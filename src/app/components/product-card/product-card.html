@@ -1,0 +1,24 @@
+<mat-card>
+  <img mat-card-image [src]="image" [alt]="name" />
+
+  <mat-card-content>
+    <p class="name">{{ name }}</p>
+
+    <div class="prices">
+      @if (originalPrice) {
+        <span class="original">R$ {{ originalPrice }}</span>
+      }
+      <span class="price">R$ {{ price }}</span>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-icon-button>
+      <mat-icon>favorite_border</mat-icon>
+    </button>
+    <button mat-flat-button>
+      <mat-icon>shopping_cart</mat-icon>
+      Adicionar
+    </button>
+  </mat-card-actions>
+</mat-card>
