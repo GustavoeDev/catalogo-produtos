@@ -23,6 +23,10 @@ export class CartService {
     this.cart().reduce((sum, item) => sum + item.quantity, 0),
   );
 
+  readonly totalPrice = computed(() =>
+    this.cartView().reduce((sum, item) => sum + item.price * item.quantity, 0),
+  );
+
   readonly catalogView = computed<CatalogViewItem[]>(() => {
     const items = this.cart();
 
@@ -95,6 +99,10 @@ export class CartService {
 
   removeAll(productId: ProductId): void {
     this.cart.update((items) => items.filter((item) => item.productId !== productId));
+  }
+
+  clear(): void {
+    this.cart.set([]);
   }
 
   private quantityInCart(items: CartItem[], productId: ProductId): number {
