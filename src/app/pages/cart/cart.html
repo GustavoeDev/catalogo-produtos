@@ -1,0 +1,21 @@
+@if (cartView().length === 0) {
+  <p>Seu carrinho está vazio.</p>
+} @else {
+  <div class="products-grid">
+    @for (product of cartView(); track product.id) {
+      <app-product-card
+        variant="cart"
+        [productId]="product.id"
+        [name]="product.name"
+        [image]="product.image"
+        [price]="product.price"
+        [originalPrice]="product.originalPrice ?? 0"
+        [quantity]="product.quantity"
+        [availableStock]="product.availableStock"
+        (increment)="addOne($event)"
+        (decrement)="removeOne($event)"
+        (removeAll)="removeAll($event)"
+      />
+    }
+  </div>
+}

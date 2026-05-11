@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {ThemeToggle} from '../theme-toggle/theme-toggle';
 import { MatIcon } from '@angular/material/icon';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 import {MatBadgeModule} from '@angular/material/badge';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -10,4 +11,8 @@ import {MatBadgeModule} from '@angular/material/badge';
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
-export class Header {}
+export class Header {
+  private readonly cartService = inject(CartService);
+
+  protected readonly totalUnitsInCart = this.cartService.totalUnitsInCart;
+}
