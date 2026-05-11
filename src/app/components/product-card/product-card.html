@@ -3,22 +3,47 @@
 
   <mat-card-content>
     <p class="name">{{ name }}</p>
-
+    
+    @if (variant === 'catalog') {
+      <p class="stock">Estoque: {{ availableStock }}</p>
+    }
+    
     <div class="prices">
       @if (originalPrice) {
-        <span class="original">R$ {{ originalPrice }}</span>
+        <span class="original">{{ originalPrice | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</span>
       }
-      <span class="price">R$ {{ price }}</span>
+      <span class="price">{{ price | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</span>
     </div>
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-icon-button>
-      <mat-icon>favorite_border</mat-icon>
-    </button>
-    <button mat-flat-button>
-      <mat-icon>shopping_cart</mat-icon>
-      Adicionar
-    </button>
+    @if (variant === 'catalog') {
+      <button mat-icon-button>
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+      <button mat-flat-button [disabled]="availableStock === 0" (click)="onAdd()">
+        <mat-icon>shopping_cart</mat-icon>
+        @if (availableStock === 0) {
+          Esgotado
+        } @else {
+          Adicionar
+        }
+      </button>
+    } @else {
+      <button mat-icon-button (click)="onDecrement()" [disabled]="quantity <= 0">
+        <mat-icon>remove</mat-icon>
+      </button>
+
+      <span>Qtd: {{ quantity }}</span>
+
+      <button mat-icon-button (click)="onIncrement()" [disabled]="availableStock === 0">
+        <mat-icon>add</mat-icon>
+      </button>
+
+      <button mat-stroked-button (click)="onRemoveAll()">
+        <mat-icon>delete</mat-icon>
+        Remover
+      </button>
+    }
   </mat-card-actions>
 </mat-card>

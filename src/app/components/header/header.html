@@ -9,7 +9,7 @@
 
   <div>
     <app-theme-toggle />
-    <button [matBadge]="3" matBadgeColor="warn">
+    <button routerLink="/carrinho" [matBadge]="totalUnitsInCart()" matBadgeColor="warn">
       <mat-icon>shopping_cart</mat-icon>
     </button>
   </div>
