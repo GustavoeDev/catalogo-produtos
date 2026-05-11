@@ -3,11 +3,11 @@
 
   <mat-card-content>
     <p class="name">{{ name }}</p>
-    
+
     @if (variant === 'catalog') {
       <p class="stock">Estoque: {{ availableStock }}</p>
     }
-    
+
     <div class="prices">
       @if (originalPrice) {
         <span class="original">{{ originalPrice | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</span>
@@ -18,9 +18,6 @@
 
   <mat-card-actions>
     @if (variant === 'catalog') {
-      <button mat-icon-button>
-        <mat-icon>favorite_border</mat-icon>
-      </button>
       <button mat-flat-button [disabled]="availableStock === 0" (click)="onAdd()">
         <mat-icon>shopping_cart</mat-icon>
         @if (availableStock === 0) {

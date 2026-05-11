@@ -5,32 +5,43 @@
 }
 
 .empty-cart {
-  text-align: center;
-  padding: 64px 24px;
-  margin-top: 24px;
+  padding: 80px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 16px;
+  text-align: center;
 }
 
 .empty-icon {
-  font-size: 64px;
-  width: 64px;
-  height: 64px;
-  margin-bottom: 24px;
-  opacity: 0.5;
+  font-size: 72px;
+  width: 72px;
+  height: 72px;
+  color: var(--mat-sys-primary);
+  opacity: 0.3;
 }
 
 .empty-cart h2 {
-  font-size: 24px;
-  margin-bottom: 8px;
-  font-weight: 500;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--mat-sys-on-surface);
+  margin: 0;
 }
 
 .empty-cart p {
-  color: #666;
-  margin-bottom: 32px;
+  font-size: 16px;
+  color: var(--mat-sys-on-surface-variant);
+  max-width: 320px;
+  margin: 0;
+}
+
+.empty-cart a[mat-flat-button] {
+  border-radius: 10px;
+  padding: 12px 32px;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .btn-primary {
@@ -49,59 +60,89 @@
 
 .cart-layout {
   display: flex;
-  gap: 32px;
+  gap: 40px;
   align-items: flex-start;
-  margin-top: 24px;
+  padding-top: 8px;
 }
 
 .cart-items {
   flex: 1;
 }
 
-.cart-title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.cart-items h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: -0.5px;
   margin-bottom: 24px;
+  color: var(--mat-sys-on-surface);
 }
 
 .products-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
+  gap: 16px;
 }
 
 .cart-summary {
   width: 380px;
   position: sticky;
-  top: 24px;
+  top: 92px;
+  border-radius: 20px;
+  border: 1px solid var(--mat-sys-outline-variant);
+  background: var(--mat-sys-surface);
+  box-shadow: 0 4px 24px rgba(79,70,229,0.10) !important;
 }
 
-mat-card-header {
-  margin-bottom: 16px;
+:host-context(.dark-theme) .cart-summary {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.30) !important;
+}
+
+.cart-summary mat-card-header {
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+  padding-bottom: 16px;
+  margin-bottom: 0;
+}
+
+.cart-summary mat-card-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .summary-row {
   display: flex;
   justify-content: space-between;
   margin: 16px 0;
-  font-size: 16px;
+  font-size: 15px;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.summary-row strong {
+  color: var(--mat-sys-on-surface);
+  font-weight: 600;
 }
 
 .summary-row.total {
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 20px;
   margin-top: 16px;
   margin-bottom: 0;
 }
 
+.summary-row.total strong {
+  color: var(--mat-sys-primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+
 .btn-checkout {
   width: 100%;
-  padding: 24px 0;
+  padding: 14px 0;
   font-size: 16px;
-  border-radius: 8px;
+  font-weight: 600;
+  border-radius: 12px;
+  letter-spacing: 0.02em;
 }
 
 mat-divider {

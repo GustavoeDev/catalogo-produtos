@@ -14,7 +14,7 @@ import { CartService } from '../../services/cart.service';
   imports: [MatDialogModule, MatButtonModule, MatIconModule],
   template: `
     <div style="text-align: center; padding: 24px;">
-      <mat-icon color="primary" style="font-size: 48px; width: 48px; height: 48px; margin-bottom: 16px;">check_circle</mat-icon>
+      <mat-icon color="primary" style="font-size: 48px; width: 48px; height: 48px;">check_circle</mat-icon>
       <h2 mat-dialog-title style="margin: 0 0 16px;">Compra realizada com sucesso!</h2>
       <mat-dialog-content>
         <p style="font-size: 16px; margin-bottom: 8px;">Obrigado por comprar conosco.</p>

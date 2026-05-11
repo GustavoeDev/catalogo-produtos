@@ -3,11 +3,14 @@
 // Tema Light
 :root {
   color-scheme: light;
-
   @include mat.theme((
     color: (
-      primary: mat.$blue-palette,
-      tertiary: mat.$orange-palette,
+      primary: mat.$azure-palette,       // Azul profissional, mais rico que $blue
+      tertiary: mat.$orange-palette,     // Laranja para CTAs e promoções
+    ),
+    typography: (
+      brand-family: 'Plus Jakarta Sans',
+      plain-family: 'Inter',
     ),
   ));
 }
@@ -15,12 +18,15 @@
 // Tema Dark
 .dark-theme {
   color-scheme: dark;
-
   @include mat.theme((
     color: (
-      primary: mat.$violet-palette,
+      primary: mat.$azure-palette,
       tertiary: mat.$orange-palette,
       theme-type: dark,
+    ),
+    typography: (
+      brand-family: 'Plus Jakarta Sans',
+      plain-family: 'Inter',
     ),
   ));
 }

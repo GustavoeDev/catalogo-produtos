@@ -1,3 +1,12 @@
+:root {
+  --mdc-elevated-card-container-shape: 16px;
+  --mdc-outlined-card-container-shape: 16px;
+  --mat-card-subtitle-text-font: 'Inter';
+  --mdc-filled-button-container-shape: 10px;
+  --mdc-outlined-button-container-shape: 10px;
+  --mdc-icon-button-state-layer-size: 40px;
+}
+
 *,
 *::before,
 *::after {
@@ -14,4 +23,8 @@ body {
   font-family: 'Inter', sans-serif;
   background: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
+}
+
+body:not(.dark-theme) {
+  background: color-mix(in srgb, var(--mat-sys-surface) 98%, var(--mat-sys-primary) 2%);
 }
