@@ -4,6 +4,8 @@ header {
   justify-content: space-between;
   padding: 0 2.5rem;
   height: 68px;
+  background: color-mix(in srgb, var(--mat-sys-surface) 94%, transparent);
+  backdrop-filter: blur(8px);
   border-bottom: 0.5px solid var(--mat-sys-outline-variant);
   position: sticky;
   top: 0;
