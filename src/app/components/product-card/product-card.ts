@@ -4,11 +4,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { DiscountPipe } from '../../pipes/discount.pipe';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatIconModule, CurrencyPipe, NgClass, NgStyle, DiscountPipe],
+  imports: [MatCardModule, MatButtonModule, MatIconModule, CurrencyPipe, NgClass, NgStyle, DiscountPipe, RouterLink],
   templateUrl: './product-card.html',
   styleUrl: './product-card.css',
 })
@@ -17,6 +18,7 @@ export class ProductCard {
   variant = input<'catalog' | 'cart'>('catalog');
   image = input('');
   name = input('');
+  description = input('');
   price = input(0);
   originalPrice = input<number>(0);
   availableStock = input(0);

@@ -1,0 +1,7 @@
+<a class="related-card" [routerLink]="['/produto', product().id]">
+  <img [src]="product().image" [alt]="product().name" />
+  <div>
+    <p>{{ product().name }}</p>
+    <span>{{ product().price | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</span>
+  </div>
+</a>

@@ -12,6 +12,14 @@
     <p class="name">{{ name() }}</p>
 
     @if (variant() === 'catalog') {
+      <p class="description">{{ description() }}</p>
+      <a class="details-link" [routerLink]="['/produto', productId()]">
+        Ver detalhes
+        <mat-icon>arrow_forward</mat-icon>
+      </a>
+    }
+
+    @if (variant() === 'catalog') {
       <p class="stock" [class.no-stock]="availableStock() === 0">
         Estoque: {{ availableStock() }}
       </p>
