@@ -22,7 +22,8 @@
   width: 100%;
   display: block;
   aspect-ratio: 1;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--mat-sys-surface-variant);
 }
 
 .media .badge {

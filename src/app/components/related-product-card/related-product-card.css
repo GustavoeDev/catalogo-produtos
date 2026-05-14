@@ -19,7 +19,8 @@
   width: 56px;
   height: 56px;
   border-radius: 12px;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--mat-sys-surface-variant);
 }
 
 .related-card p {
