@@ -1,0 +1,28 @@
+@if (product(); as item) {
+  <div class="detail-header">
+    <a class="back-link" routerLink="/">
+      <mat-icon>arrow_back</mat-icon>
+      Voltar ao catalogo
+    </a>
+  </div>
+
+  <app-product-detail-section [product]="item" (add)="addOne($event)" />
+
+  <section class="related">
+    <h2>Outros produtos</h2>
+    <div class="related-grid">
+      @for (product of catalogView(); track product.id) {
+        @if (product.id !== item.id) {
+          <app-related-product-card [product]="product" />
+        }
+      }
+    </div>
+  </section>
+} @else {
+  <div class="not-found">
+    <mat-icon>error_outline</mat-icon>
+    <h2>Produto nao encontrado</h2>
+    <p>Volte ao catalogo para escolher outro item.</p>
+    <a mat-flat-button routerLink="/">Ver catalogo</a>
+  </div>
+}
