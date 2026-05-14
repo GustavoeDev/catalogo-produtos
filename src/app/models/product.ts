@@ -3,6 +3,7 @@ export type ProductId = number;
 export interface CatalogProduct {
   id: ProductId;
   name: string;
+  description: string;
   image: string;
   price: number;
   originalPrice?: number;
