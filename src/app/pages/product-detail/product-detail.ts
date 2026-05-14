@@ -4,12 +4,13 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
 import { CartService } from '../../services/cart.service';
-import { ProductDetailSection } from '../../components/product-detail-section/product-detail-section';
+import { ProductDetailSection } from './components/product-detail-section/product-detail-section';
 import { RelatedProductCard } from '../../components/related-product-card/related-product-card';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-product-detail',
-  imports: [RouterLink, MatIconModule, ProductDetailSection, RelatedProductCard],
+  imports: [RouterLink, MatIconModule, ProductDetailSection, RelatedProductCard, MatButton],
   templateUrl: './product-detail.html',
   styleUrl: './product-detail.css',
 })

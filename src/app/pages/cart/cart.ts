@@ -5,20 +5,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialog, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CustomCurrencyPipe } from '../../pipes/custom-currency.pipe';
 
 import { ProductCard } from '../../components/product-card/product-card';
 import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-checkout-success-dialog',
-  imports: [MatDialogModule, MatButtonModule, MatIconModule],
+  imports: [MatDialogModule, MatButtonModule, MatIconModule, CustomCurrencyPipe],
   template: `
     <div style="text-align: center; padding: 24px;">
       <mat-icon color="primary" style="font-size: 48px; width: 48px; height: 48px;">check_circle</mat-icon>
       <h2 mat-dialog-title style="margin: 0 0 16px;">Compra realizada com sucesso!</h2>
       <mat-dialog-content>
         <p style="font-size: 16px; margin-bottom: 8px;">Obrigado por comprar conosco.</p>
-        <p style="font-size: 18px; font-weight: 500;">Valor total: R$ {{ data.totalPrice.toFixed(2) }}</p>
+        <p style="font-size: 18px; font-weight: 500;">Valor total: {{ data.totalPrice | customCurrency }}</p>
       </mat-dialog-content>
       <mat-dialog-actions align="center" style="margin-top: 16px;">
         <button mat-flat-button color="primary" mat-dialog-close>Concluir</button>
@@ -32,7 +33,7 @@ export class CheckoutSuccessDialog {
 
 @Component({
   selector: 'app-cart',
-  imports: [ProductCard, CommonModule, MatButtonModule, MatIconModule, MatDividerModule, MatCardModule, MatDialogModule],
+  imports: [ProductCard, CommonModule, MatButtonModule, MatIconModule, MatDividerModule, MatCardModule, MatDialogModule, CustomCurrencyPipe],
   templateUrl: './cart.html',
   styleUrl: './cart.css',
 })

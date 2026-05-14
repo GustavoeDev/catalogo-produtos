@@ -27,9 +27,9 @@
 
     <div class="prices">
       @if (originalPrice()) {
-        <span class="original">{{ originalPrice() | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</span>
+        <span class="original">{{ originalPrice() | customCurrency }}</span>
       }
-      <span class="price">{{ price() | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</span>
+      <span class="price">{{ price() | customCurrency }}</span>
     </div>
   </mat-card-content>
 

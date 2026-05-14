@@ -12,9 +12,9 @@
 
     <div class="price-row">
       @if (product().originalPrice) {
-        <span class="original">{{ product().originalPrice | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</span>
+        <span class="original">{{ product().originalPrice | customCurrency }}</span>
       }
-      <span class="price">{{ product().price | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</span>
+      <span class="price">{{ product().price | customCurrency }}</span>
     </div>
 
     <div class="stock" [ngClass]="{ 'no-stock': product().availableStock === 0 }">

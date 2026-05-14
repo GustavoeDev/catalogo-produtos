@@ -6,7 +6,7 @@ export const CATALOG: CatalogProduct[] = [
     name: 'Computador Gamer',
     description: 'Desktop compacto com desempenho para jogos e multitarefa do dia a dia.',
     image: 'images/computador.png',
-    price: 99.90,
+    price: 3499.90,
     stock: 5,
   },
   {
@@ -14,7 +14,7 @@ export const CATALOG: CatalogProduct[] = [
     name: 'Iphone 16',
     description: 'Smartphone leve, tela vibrante e bateria que dura o dia inteiro.',
     image: 'images/iphone.png',
-    price: 149.90,
+    price: 4899.00,
     stock: 10,
   },
   {

@@ -42,8 +42,8 @@
           </div>
           <mat-divider></mat-divider>
           <div class="summary-row total">
-            <span>Total:</span>
-            <strong>{{ totalPrice() | currency:'BRL':'symbol' }}</strong>
+            <span>Total</span>
+            <strong>{{ totalPrice() | customCurrency }}</strong>
           </div>
         </div>
       </mat-card-content>
